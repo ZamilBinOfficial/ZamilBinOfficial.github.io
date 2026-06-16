@@ -1,366 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zamil Bin | Personal Portfolio</title>
-    
-    <!-- Meta tags for SEO -->
-    <meta name="description" content="Welcome to the personal portfolio of Zamil Bin - YouTuber, gamer, and creator. Explore my projects, skills, and get in touch.">
-    <meta name="keywords" content="Zamil Bin, Portfolio, YouTube, Minecraft, Video Editing, Student, Creator">
-    
-    <!-- Google Fonts: Outfit for sleek modern geometry & Space Grotesk for accents -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome for Premium Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Link to external stylesheet -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============================================================= -->
+  <!-- SEO META TAGS  (edit these to change how the site appears     -->
+  <!-- in Google results and when shared on social media)            -->
+  <!-- ============================================================= -->
+  <title>Zamil Bin — Gamer · Editor · Full-Time Viber</title>
+  <meta name="description" content="The personal hub of Zamil Bin (@_zamilbin) — 17-year-old gamer from Bangladesh. Minecraft, Roblox, Genshin & Terraria. Video editor, YouTuber, Spotify addict. Living in my drained arc!!" />
+  <meta name="keywords" content="Zamil Bin, _zamilbin, gamer, Bangladesh, Minecraft, Roblox, Genshin Impact, Terraria, video editing, YouTube, gaming portfolio" />
+  <meta name="author" content="Zamil Bin" />
+  <meta name="theme-color" content="#0a0a0f" />
+
+  <!-- Open Graph / social share preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Zamil Bin — Gamer · Editor · Full-Time Viber" />
+  <meta property="og:description" content="Professional procrastinator. Part-time gamer. Full-time viber. Living in my drained arc!!" />
+  <meta property="og:url" content="https://zamilbin.me" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Zamil Bin — Gamer · Editor · Full-Time Viber" />
+  <meta name="twitter:description" content="Professional procrastinator. Part-time gamer. Full-time viber." />
+
+  <!-- Favicon (emoji as inline SVG — swap for a real .ico later if you want) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>" />
+
+  <!-- ============================================================= -->
+  <!-- GOOGLE FONTS — Space Grotesk (headings) + Outfit (body)        -->
+  <!-- ============================================================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- FONT AWESOME 6 — social + UI icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Our stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    
-    <!-- Navigation Bar -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">
-                <span class="logo-accent">&lt;</span>Zamil<span class="logo-accent"> /&gt;</span>
-            </a>
-            
-            <!-- Mobile Menu Toggle Button -->
-            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            
-            <!-- Navigation Links -->
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#hero" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
+
+  <!-- ============================================================= -->
+  <!-- CANVAS STARFIELD — slow floating particles behind everything  -->
+  <!-- (drawn + animated in script.js)                               -->
+  <!-- ============================================================= -->
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <!-- Ambient gradient fog blobs that drift on mouse move (parallax) -->
+  <div class="ambient" aria-hidden="true">
+    <span class="ambient__blob ambient__blob--purple" data-depth="0.018"></span>
+    <span class="ambient__blob ambient__blob--cyan"   data-depth="0.030"></span>
+    <span class="ambient__blob ambient__blob--pink"   data-depth="0.024"></span>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- NAVBAR                                                         -->
+  <!-- ============================================================= -->
+  <header class="nav" id="nav">
+    <a href="#hero" class="nav__brand" aria-label="Back to top">
+      <span class="nav__brand-mark">ZB</span>
+      <span class="nav__brand-text">_zamilbin</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Main navigation">
+      <a href="#about" class="nav__link">About</a>
+      <a href="#what" class="nav__link">What I Do</a>
+      <a href="#vibing" class="nav__link">Now Vibing</a>
+      <a href="#socials" class="nav__link">Connect</a>
     </nav>
 
-    <!-- Hero Section -->
-    <header id="hero" class="hero-section">
-        <!-- Background subtle grid effect -->
-        <div class="hero-bg-grid"></div>
-        <div class="glow-orb orb-1"></div>
-        <div class="glow-orb orb-2"></div>
-        
-        <div class="hero-container container">
-            <div class="hero-content">
-                <span class="hero-badge">Welcome to my space</span>
-                <h1 class="hero-title">
-                    Hi, I'm <span class="gradient-text">Zamil Bin</span>
-                </h1>
-                <h2 class="hero-subtitle">
-                    I am a <span class="typed-text">Content Creator & Game Enthusiast</span>
-                </h2>
-                <p class="hero-description">
-                    Currently in Class 10, prepping for SSC 2027. I love editing videos, playing Minecraft, studying smart, and building cool digital experiences. Welcome to my personal hub!
-                </p>
-                <div class="hero-ctas">
-                    <a href="#projects" class="btn btn-primary">View My Work <i class="fa-solid fa-arrow-right"></i></a>
-                    <a href="#contact" class="btn btn-outline">Let's Connect</a>
-                </div>
-                
-                <!-- Social Links -->
-                <div class="social-links">
-                    <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" class="social-icon" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-icon" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="social-icon" title="Discord"><i class="fa-brands fa-discord"></i></a>
-                </div>
-            </div>
-            
-            <!-- Hero Visual Area -->
-            <div class="hero-visual">
-                <div class="visual-wrapper">
-                    <!-- Glass card containing stats/info -->
-                    <div class="visual-card glass">
-                        <div class="card-dots">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
-                        </div>
-                        <div class="code-preview">
-                            <p class="code-line"><span class="c-keyword">const</span> creator = {</p>
-                            <p class="code-line indent"><span class="c-prop">name</span>: <span class="c-str">"Zamil Bin"</span>,</p>
-                            <p class="code-line indent"><span class="c-prop">grade</span>: <span class="c-str">"Class 10 (SSC 2027)"</span>,</p>
-                            <p class="code-line indent"><span class="c-prop">interests</span>: [<span class="c-str">"Gaming"</span>, <span class="c-str">"Edits"</span>, <span class="c-str">"Studying"</span>],</p>
-                            <p class="code-line indent"><span class="c-prop">status</span>: <span class="c-str">"Focusing & Building"</span></p>
-                            <p class="code-line">};</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-down">
-            <a href="#about" aria-label="Scroll to About Section">
-                <div class="mouse">
-                    <div class="wheel"></div>
-                </div>
-            </a>
-        </div>
-    </header>
+    <!-- Mobile menu toggle -->
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
 
-    <!-- About Section -->
-    <section id="about" class="about-section section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Biography</span>
-                <h2 class="section-title">About Me</h2>
-                <div class="underline"></div>
-            </div>
-            
-            <div class="about-grid">
-                <!-- Profile details -->
-                <div class="about-content">
-                    <h3 class="about-subtitle">Developing Skills & Chasing Goals</h3>
-                    <p class="about-text">
-                        Hey! I'm Zamil, currently a student from Kaliganj, Dhaka, Bangladesh, heading towards SSC 2027. Aside from studies, I run my YouTube channel <strong>Zamil Bin</strong>, where I post Minecraft gameplays and creative video edits.
-                    </p>
-                    <p class="about-text">
-                        My primary goal is to build strong academic basics in science (Physics, Chemistry, Higher Math) while learning modern technology, improving English fluency, and working on my physical fitness and productivity.
-                    </p>
-                    
-                    <div class="personal-info-grid">
-                        <div class="info-item">
-                            <span class="info-label"><i class="fa-solid fa-graduation-cap"></i> Grade:</span>
-                            <span class="info-value">Class 10 (SSC 2027 Batch)</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label"><i class="fa-solid fa-location-dot"></i> From:</span>
-                            <span class="info-value">Dhaka, Bangladesh</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label"><i class="fa-solid fa-gamepad"></i> Hobbies:</span>
-                            <span class="info-value">Minecraft, Video Editing</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label"><i class="fa-solid fa-clock"></i> Focus:</span>
-                            <span class="info-value">Productivity & Learning</span>
-                        </div>
-                    </div>
-                </div>
+  <main>
 
-                <!-- Achievements/Highlights box -->
-                <div class="about-highlight glass">
-                    <div class="highlight-header">
-                        <h4>Life Stats & Focus</h4>
-                    </div>
-                    <ul class="highlight-list">
-                        <li>
-                            <div class="hl-icon"><i class="fa-brands fa-youtube"></i></div>
-                            <div class="hl-detail">
-                                <strong>YouTube Channel</strong>
-                                <p>Minecraft gameplay & creative video edits</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="hl-icon"><i class="fa-solid fa-brain"></i></div>
-                            <div class="hl-detail">
-                                <strong>Smart Learning</strong>
-                                <p>Building logic in STEM & English fluency</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="hl-icon"><i class="fa-solid fa-heart-pulse"></i></div>
-                            <div class="hl-detail">
-                                <strong>Health & Habits</strong>
-                                <p>Strict routines, weight gain and screen management</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <!-- ========================================================= -->
+    <!-- 1. HERO / LANDING                                          -->
+    <!-- ========================================================= -->
+    <section class="hero" id="hero">
+
+      <!-- Floating 3D geometric accent elements.
+           Outer .floater = parallax layer (moved by JS via data-depth).
+           Inner .floater__shape = the visual that gently bobs (CSS keyframes).
+           Splitting them lets parallax + bob compose without fighting. -->
+      <div class="hero__floaters" aria-hidden="true">
+        <span class="floater" data-depth="0.05"><i class="floater__shape floater__shape--ring"></i></span>
+        <span class="floater" data-depth="0.08"><i class="floater__shape floater__shape--cube"></i></span>
+        <span class="floater" data-depth="0.06"><i class="floater__shape floater__shape--orb"></i></span>
+        <span class="floater" data-depth="0.10"><i class="floater__shape floater__shape--diamond"></i></span>
+        <span class="floater" data-depth="0.07"><i class="floater__shape floater__shape--plus"></i></span>
+      </div>
+
+      <div class="hero__inner">
+        <p class="hero__eyebrow reveal">
+          <span class="hero__status-dot"></span>
+          Living in my drained arc!!
+        </p>
+
+        <!-- Big 3D name with layered text-shadow depth (see .hero__name in CSS) -->
+        <h1 class="hero__name reveal" data-text="ZAMIL BIN">ZAMIL&nbsp;BIN</h1>
+
+        <p class="hero__username reveal">@_zamilbin &nbsp;·&nbsp; He/Him</p>
+
+        <p class="hero__tagline reveal">
+          Professional procrastinator. Part-time gamer. <span class="grad-text">Full-time viber.</span>
+        </p>
+
+        <!-- Social icon row -->
+        <div class="hero__socials reveal" role="list">
+          <a class="social-pill" role="listitem" href="https://www.youtube.com/channel/UCJl5FO4ubJfr4sDUgUMQcsQ" target="_blank" rel="noopener" aria-label="YouTube" data-label="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a class="social-pill" role="listitem" href="https://github.com/ZamilBinOfficial" target="_blank" rel="noopener" aria-label="GitHub" data-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <!-- Roblox: Font Awesome has no Roblox brand icon, so we use an inline SVG -->
+          <a class="social-pill" role="listitem" href="https://www.roblox.com/users/7947242750/profile" target="_blank" rel="noopener" aria-label="Roblox" data-label="Roblox">
+            <svg class="icon-roblox" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M4.94 0 0 18.86 18.86 24 24 5.06 4.94 0zm9.49 14.49-4.95-1.32 1.32-4.95 4.95 1.32-1.32 4.95z" />
+            </svg>
+          </a>
+          <a class="social-pill" role="listitem" href="https://x.com/zamilbin_" target="_blank" rel="noopener" aria-label="X / Twitter" data-label="X">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a class="social-pill" role="listitem" href="https://open.spotify.com/user/31adnieczn7f4twy2w5ockpedpvy" target="_blank" rel="noopener" aria-label="Spotify" data-label="Spotify">
+            <i class="fa-brands fa-spotify"></i>
+          </a>
+          <!-- Discord is a username (not a link) — copy-to-clipboard button -->
+          <button class="social-pill" type="button" aria-label="Copy Discord username _zamilbin" data-label="Discord" data-copy="_zamilbin" id="discordPill">
+            <i class="fa-brands fa-discord"></i>
+          </button>
         </div>
+
+        <!-- Scroll cue -->
+        <a href="#about" class="hero__scroll reveal" aria-label="Scroll to content">
+          <span class="hero__scroll-text">scroll</span>
+          <span class="hero__scroll-mouse"><span></span></span>
+        </a>
+      </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Competencies</span>
-                <h2 class="section-title">My Skills</h2>
-                <div class="underline"></div>
-            </div>
-            
-            <!-- Grid of skills divided into categories -->
-            <div class="skills-grid">
-                
-                <!-- Skill Category 1: Video Editing -->
-                <div class="skill-card glass scroll-reveal">
-                    <div class="skill-icon-wrap"><i class="fa-solid fa-clapperboard"></i></div>
-                    <h3>Video Editing</h3>
-                    <p>Creating engaging Minecraft videos and clips with smooth cuts, overlays, and effects.</p>
-                    <ul class="skill-sub-list">
-                        <li><span>Montages & Edits</span></li>
-                        <li><span>Audio Syncing</span></li>
-                        <li><span>Thumbnails Design</span></li>
-                    </ul>
-                </div>
+    <!-- ========================================================= -->
+    <!-- 2. ABOUT ME                                                -->
+    <!-- ========================================================= -->
+    <section class="section" id="about">
+      <div class="section__head reveal">
+        <span class="section__index">01</span>
+        <h2 class="section__title">About <span class="grad-text">Me</span></h2>
+      </div>
 
-                <!-- Skill Category 2: Gaming -->
-                <div class="skill-card glass scroll-reveal">
-                    <div class="skill-icon-wrap"><i class="fa-solid fa-gamepad"></i></div>
-                    <h3>Gaming & Strategy</h3>
-                    <p>Experienced player of sandbox & adventure games. Creating gaming contents.</p>
-                    <ul class="skill-sub-list">
-                        <li><span>Minecraft Survival</span></li>
-                        <li><span>Terraria Tactics</span></li>
-                        <li><span>Genshin Impact</span></li>
-                    </ul>
-                </div>
+      <!-- Glass card with 3D tilt on hover (data-tilt) -->
+      <article class="glass-card about-card reveal" data-tilt data-tilt-max="6">
+        <div class="about-card__glow" aria-hidden="true"></div>
+        <p class="about-card__lead">
+          Hey — I'm <strong>Zamil</strong>, 17, from <strong>Bangladesh</strong> 🇧🇩.
+        </p>
+        <p>
+          I love gaming way more than I love studying, and honestly that math isn't even close.
+          You'll usually catch me deep in <strong>Minecraft</strong>, grinding <strong>Roblox</strong>,
+          pulling on banners in <strong>Genshin Impact</strong>, or fighting bosses in <strong>Terraria</strong>.
+          When I'm not gaming, I'm editing videos and montages for my <strong>YouTube channel</strong> —
+          it's the kind of "fun" that somehow eats six hours without asking.
+        </p>
+        <p>
+          Music is basically my life support: <strong>Spotify runs 24/7</strong> in my ears.
+          School? Yeah… not my favorite arc, but I'm surviving it one skipped homework at a time.
+          Also — and this is important — <strong>I hate fish.</strong> 🐟🚫
+          That's the whole personality. Just a chill guy vibing through life, playing games,
+          making edits, and pretending deadlines are a myth.
+        </p>
 
-                <!-- Skill Category 3: Self Development -->
-                <div class="skill-card glass scroll-reveal">
-                    <div class="skill-icon-wrap"><i class="fa-solid fa-chart-line"></i></div>
-                    <h3>Productivity</h3>
-                    <p>Optimizing daily routines, quitting distractions, and focusing on target learning blocks.</p>
-                    <ul class="skill-sub-list">
-                        <li><span>Routine Tracking</span></li>
-                        <li><span>English Speaking</span></li>
-                        <li><span>Time Management</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <!-- quick fun facts -->
+        <ul class="about-card__facts" aria-label="Quick facts">
+          <li><i class="fa-solid fa-location-dot"></i> Bangladesh</li>
+          <li><i class="fa-solid fa-cake-candles"></i> 17 y/o</li>
+          <li><i class="fa-solid fa-headphones"></i> Music 24/7</li>
+          <li><i class="fa-solid fa-fish"></i> Fish hater</li>
+        </ul>
+      </article>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Portfolio</span>
-                <h2 class="section-title">Featured Projects</h2>
-                <div class="underline"></div>
-            </div>
-            
-            <div class="projects-grid">
-                
-                <!-- Project 1 -->
-                <div class="project-card glass scroll-reveal">
-                    <div class="project-image-placeholder">
-                        <i class="fa-brands fa-youtube project-placeholder-icon"></i>
-                    </div>
-                    <div class="project-details">
-                        <span class="project-tag">YouTube Content</span>
-                        <h3>YouTube Gaming Video</h3>
-                        <p>A highly edited Minecraft video showcasing custom challenges and survival adventures.</p>
-                        <div class="project-links">
-                            <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fa-brands fa-youtube"></i> Watch Video</a>
-                        </div>
-                    </div>
-                </div>
+    <!-- ========================================================= -->
+    <!-- 3. WHAT I DO                                                -->
+    <!-- ========================================================= -->
+    <section class="section" id="what">
+      <div class="section__head reveal">
+        <span class="section__index">02</span>
+        <h2 class="section__title">What I <span class="grad-text">Do</span></h2>
+        <p class="section__sub">A normal day, more or less.</p>
+      </div>
 
-                <!-- Project 2 -->
-                <div class="project-card glass scroll-reveal">
-                    <div class="project-image-placeholder">
-                        <i class="fa-solid fa-code project-placeholder-icon"></i>
-                    </div>
-                    <div class="project-details">
-                        <span class="project-tag">Web Dev</span>
-                        <h3>Custom Portfolio Website</h3>
-                        <p>This premium, responsive portfolio. Built using pure HTML, CSS, and vanilla JS hosted on GitHub Pages.</p>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Source Code</a>
-                        </div>
-                    </div>
-                </div>
+      <div class="cards-grid">
 
-                <!-- Project 3 -->
-                <div class="project-card glass scroll-reveal">
-                    <div class="project-image-placeholder">
-                        <i class="fa-solid fa-film project-placeholder-icon"></i>
-                    </div>
-                    <div class="project-details">
-                        <span class="project-tag">Video Editing</span>
-                        <h3>Gameplay Montages</h3>
-                        <p>Short edits and montages featuring transitions, color grading, and synced sound tracks.</p>
-                        <div class="project-links">
-                            <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fa-brands fa-youtube"></i> View Edit</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Gaming -->
+        <article class="glass-card do-card reveal" data-tilt data-tilt-max="12">
+          <div class="do-card__shine" aria-hidden="true"></div>
+          <div class="do-card__icon do-card__icon--purple"><i class="fa-solid fa-gamepad"></i></div>
+          <h3 class="do-card__title">Gaming</h3>
+          <p class="do-card__desc">My natural habitat. Building, grinding, exploring, and definitely losing track of time.</p>
+          <div class="do-card__tags">
+            <span>Minecraft</span><span>Roblox</span><span>Genshin</span><span>Terraria</span>
+          </div>
+        </article>
+
+        <!-- Video Editing -->
+        <article class="glass-card do-card reveal" data-tilt data-tilt-max="12">
+          <div class="do-card__shine" aria-hidden="true"></div>
+          <div class="do-card__icon do-card__icon--cyan"><i class="fa-solid fa-clapperboard"></i></div>
+          <h3 class="do-card__title">Video Editing</h3>
+          <p class="do-card__desc">Cutting montages and content for my YouTube channel. Transitions, beat syncs, the whole vibe.</p>
+          <div class="do-card__tags">
+            <span>YouTube</span><span>Montages</span><span>Edits</span>
+          </div>
+        </article>
+
+        <!-- Music -->
+        <article class="glass-card do-card reveal" data-tilt data-tilt-max="12">
+          <div class="do-card__shine" aria-hidden="true"></div>
+          <div class="do-card__icon do-card__icon--pink"><i class="fa-solid fa-music"></i></div>
+          <h3 class="do-card__title">Music</h3>
+          <p class="do-card__desc">Certified Spotify addict. There is always something playing — silence is not a thing here.</p>
+          <div class="do-card__tags">
+            <span>Spotify</span><span>24/7</span><span>Any genre</span>
+          </div>
+        </article>
+
+        <!-- Surviving School (joke card) -->
+        <article class="glass-card do-card reveal" data-tilt data-tilt-max="12">
+          <div class="do-card__shine" aria-hidden="true"></div>
+          <div class="do-card__icon do-card__icon--amber"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3 class="do-card__title">Surviving School <span class="do-card__joke">(barely)</span></h3>
+          <p class="do-card__desc">An ongoing side quest with terrible drop rates. Status: still respawning every morning.</p>
+          <div class="do-card__tags">
+            <span>Homework? no.</span><span>Vibes only</span>
+          </div>
+        </article>
+
+      </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Reach Out</span>
-                <h2 class="section-title">Contact Me</h2>
-                <div class="underline"></div>
-            </div>
-            
-            <div class="contact-grid">
-                
-                <!-- Contact info cards -->
-                <div class="contact-info">
-                    <h3>Let's collaborate or chat!</h3>
-                    <p class="contact-desc">
-                        Whether you want to collaborate on a YouTube video, ask about video editing, or just have a chat about school, studies or gaming, feel free to drop a message!
-                    </p>
-                    
-                    <div class="contact-details-wrap">
-                        <div class="contact-item">
-                            <div class="c-icon"><i class="fa-solid fa-envelope"></i></div>
-                            <div class="c-text">
-                                <span>Email Me</span>
-                                <a href="mailto:zamil@zamilbin.me">zamil@zamilbin.me</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="c-icon"><i class="fa-brands fa-discord"></i></div>
-                            <div class="c-text">
-                                <span>Discord Tag</span>
-                                <p>zamilbin (Placeholder)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- ========================================================= -->
+    <!-- 4. NOW VIBING (Spotify-inspired)                           -->
+    <!-- ========================================================= -->
+    <section class="section" id="vibing">
+      <div class="section__head reveal">
+        <span class="section__index">03</span>
+        <h2 class="section__title">Now <span class="grad-text">Vibing</span></h2>
+        <p class="section__sub">Sound's always on. Studying's always off.</p>
+      </div>
 
-                <!-- Contact Form -->
-                <div class="contact-form-card glass">
-                    <form id="contact-form" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">Send Message <i class="fa-solid fa-paper-plane"></i></button>
-                        <div id="form-status" class="form-status"></div>
-                    </form>
-                </div>
-            </div>
+      <article class="glass-card vibe-card reveal" data-tilt data-tilt-max="5">
+        <div class="vibe-card__bars" aria-hidden="true">
+          <!-- animated equalizer bars -->
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
         </div>
+
+        <div class="vibe-card__cover" aria-hidden="true">
+          <i class="fa-solid fa-compact-disc"></i>
+        </div>
+
+        <div class="vibe-card__meta">
+          <span class="vibe-card__now">
+            <span class="vibe-card__live-dot"></span> Currently playing
+          </span>
+          <p class="vibe-card__track">Whatever's stuck in my head today</p>
+          <p class="vibe-card__artist">on endless repeat · curated chaos</p>
+
+          <!-- fake-but-fun progress bar -->
+          <div class="vibe-card__progress" aria-hidden="true">
+            <span class="vibe-card__progress-fill"></span>
+          </div>
+          <div class="vibe-card__time" aria-hidden="true">
+            <span>1:24</span><span>3:48</span>
+          </div>
+
+          <a class="vibe-card__btn" href="https://open.spotify.com/user/31adnieczn7f4twy2w5ockpedpvy" target="_blank" rel="noopener">
+            <i class="fa-brands fa-spotify"></i> Follow on Spotify
+          </a>
+        </div>
+      </article>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <p>&copy; 2026 Zamil Bin. All rights reserved.</p>
-            <p class="footer-design">Designed & Built with <i class="fa-solid fa-heart heart-pulse"></i> by Zamil</p>
-        </div>
-    </footer>
+    <!-- ========================================================= -->
+    <!-- 5. SOCIALS / LINKS                                          -->
+    <!-- ========================================================= -->
+    <section class="section" id="socials">
+      <div class="section__head reveal">
+        <span class="section__index">04</span>
+        <h2 class="section__title">Let's <span class="grad-text">Connect</span></h2>
+        <p class="section__sub">Pick a portal. I'm probably online.</p>
+      </div>
 
-    <!-- Link to JavaScript logic file -->
-    <script src="script.js"></script>
+      <div class="links-grid">
+
+        <a class="glass-card link-card link-card--youtube reveal" href="https://www.youtube.com/channel/UCJl5FO4ubJfr4sDUgUMQcsQ" target="_blank" rel="noopener" data-tilt data-tilt-max="14">
+          <i class="fa-brands fa-youtube link-card__icon"></i>
+          <span class="link-card__name">YouTube</span>
+          <span class="link-card__handle">Edits &amp; montages</span>
+          <i class="fa-solid fa-arrow-up-right-from-square link-card__go"></i>
+        </a>
+
+        <a class="glass-card link-card link-card--github reveal" href="https://github.com/ZamilBinOfficial" target="_blank" rel="noopener" data-tilt data-tilt-max="14">
+          <i class="fa-brands fa-github link-card__icon"></i>
+          <span class="link-card__name">GitHub</span>
+          <span class="link-card__handle">ZamilBinOfficial</span>
+          <i class="fa-solid fa-arrow-up-right-from-square link-card__go"></i>
+        </a>
+
+        <a class="glass-card link-card link-card--roblox reveal" href="https://www.roblox.com/users/7947242750/profile" target="_blank" rel="noopener" data-tilt data-tilt-max="14">
+          <svg class="icon-roblox link-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M4.94 0 0 18.86 18.86 24 24 5.06 4.94 0zm9.49 14.49-4.95-1.32 1.32-4.95 4.95 1.32-1.32 4.95z" />
+          </svg>
+          <span class="link-card__name">Roblox</span>
+          <span class="link-card__handle">View profile</span>
+          <i class="fa-solid fa-arrow-up-right-from-square link-card__go"></i>
+        </a>
+
+        <a class="glass-card link-card link-card--x reveal" href="https://x.com/zamilbin_" target="_blank" rel="noopener" data-tilt data-tilt-max="14">
+          <i class="fa-brands fa-x-twitter link-card__icon"></i>
+          <span class="link-card__name">X / Twitter</span>
+          <span class="link-card__handle">@zamilbin_</span>
+          <i class="fa-solid fa-arrow-up-right-from-square link-card__go"></i>
+        </a>
+
+        <a class="glass-card link-card link-card--spotify reveal" href="https://open.spotify.com/user/31adnieczn7f4twy2w5ockpedpvy" target="_blank" rel="noopener" data-tilt data-tilt-max="14">
+          <i class="fa-brands fa-spotify link-card__icon"></i>
+          <span class="link-card__name">Spotify</span>
+          <span class="link-card__handle">Always playing</span>
+          <i class="fa-solid fa-arrow-up-right-from-square link-card__go"></i>
+        </a>
+
+        <!-- Discord = copy username -->
+        <button class="glass-card link-card link-card--discord reveal" type="button" data-copy="_zamilbin" data-tilt data-tilt-max="14" aria-label="Copy Discord username _zamilbin">
+          <i class="fa-brands fa-discord link-card__icon"></i>
+          <span class="link-card__name">Discord</span>
+          <span class="link-card__handle">_zamilbin</span>
+          <i class="fa-solid fa-copy link-card__go"></i>
+        </button>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================= -->
+  <!-- 6. FOOTER                                                  -->
+  <!-- ========================================================= -->
+  <footer class="footer">
+    <div class="footer__inner reveal">
+      <span class="footer__brand-mark">ZB</span>
+      <p class="footer__line">
+        Built between respawns &amp; ignored homework.
+      </p>
+      <p class="footer__sub">
+        No fish were consumed in the making of this site. 🐟🚫
+      </p>
+      <p class="footer__copy">© <span id="year"></span> Zamil Bin · @_zamilbin · Still in my drained arc.</p>
+    </div>
+  </footer>
+
+  <!-- Toast for copy-to-clipboard feedback -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Our script -->
+  <script src="script.js" defer></script>
 </body>
 </html>
