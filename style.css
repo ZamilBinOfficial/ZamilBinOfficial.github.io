@@ -268,7 +268,11 @@ img, svg { display: block; max-width: 100%; }
   border-bottom: 1px solid var(--border);
 }
 
-.nav__links { display: flex; gap: 0.4rem; }
+.nav__links {
+  display: flex;
+  gap: 0.4rem;
+  margin-left: auto;
+}
 .nav__link {
   position: relative;
   padding: 0.5rem 0.95rem;
