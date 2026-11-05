@@ -39,10 +39,13 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Our stylesheet -->
-  <link rel="stylesheet" href="style.css?v=3.0.0" />
+  <link rel="stylesheet" href="style.css?v=3.2.0" />
 </head>
 
 <body>
+
+  <!-- Interactive cursor spotlight torch -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
   <!-- ============================================================= -->
   <!-- CANVAS STARFIELD — slow floating particles behind everything  -->
@@ -102,7 +105,7 @@
         <!-- Big 3D name with layered text-shadow depth (see .hero__name in CSS) -->
         <h1 class="hero__name reveal" data-text="ZAMIL BIN">ZAMIL&nbsp;BIN</h1>
 
-        <p class="hero__username reveal">@zamilbin_ &nbsp;·&nbsp; Editor</p>
+        <p class="hero__username reveal"><span class="hero__handle">@zamilbin_</span> &nbsp;·&nbsp; <span class="role-badge"><span class="role-cycler" id="roleCycler">Video Editor</span></span></p>
 
         <p class="hero__tagline reveal">
           Just a guy trying a little bit of everything, <span class="grad-text">mastering almost nothing.</span>
@@ -364,7 +367,7 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <!-- Our script -->
-  <script src="script.js?v=2.0.0" defer></script>
+  <script src="script.js?v=2.2.0" defer></script>
 
   </body>
 </html>

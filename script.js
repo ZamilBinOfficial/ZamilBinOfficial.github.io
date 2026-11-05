@@ -138,6 +138,8 @@
 
   function onPointerMove(e) {
     // normalise around screen centre
+    pointer.rawX = e.clientX;
+    pointer.rawY = e.clientY;
     pointer.tx = (e.clientX / window.innerWidth - 0.5);
     pointer.ty = (e.clientY / window.innerHeight - 0.5);
   }
@@ -165,6 +167,10 @@
       }
     }
 
+    const cursorGlow = document.getElementById("cursorGlow");
+    if (cursorGlow && !isTouch && pointer.rawX !== undefined) {
+      cursorGlow.style.transform = `translate3d(${pointer.rawX}px, ${pointer.rawY}px, 0) translate(-50%, -50%)`;
+    }
     requestAnimationFrame(frame);
   }
 
@@ -390,6 +396,49 @@
   }
 
 
+
+  /* =================================================================
+     10. BENTO SPOTLIGHT & CARD HOVER COORDINATES
+     ================================================================= */
+  function initBentoSpotlight() {
+    if (isTouch) return;
+    const cards = document.querySelectorAll(".glass-card");
+    cards.forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+        card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+      }, { passive: true });
+    });
+  }
+
+
+  /* =================================================================
+     11. ROLE CYCLER (Hero persona transition)
+     ================================================================= */
+  function initRoleCycler() {
+    const el = document.getElementById("roleCycler");
+    if (!el) return;
+    const roles = [
+      "Video Editor",
+      "Roblox Creator",
+      "Gamer",
+      "Content Architect",
+      "Full-Time Viber"
+    ];
+    let idx = 0;
+    setInterval(() => {
+      el.classList.add("fade-out");
+      setTimeout(() => {
+        idx = (idx + 1) % roles.length;
+        el.textContent = roles[idx];
+        el.classList.remove("fade-out");
+        el.classList.add("fade-in");
+        setTimeout(() => el.classList.remove("fade-in"), 300);
+      }, 250);
+    }, 2800);
+  }
+
   /* =================================================================
      BOOT — run everything once the DOM is ready
      ================================================================= */
@@ -399,6 +448,8 @@
     initReveal();
     initCopy();
     initStarfield();
+    initBentoSpotlight();
+    initRoleCycler();
 
     // mouse-driven 3D only when it makes sense
     if (!isTouch && !prefersReducedMotion) {
