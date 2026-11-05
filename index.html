@@ -371,20 +371,9 @@
 
   <!-- Swarm Rebuild script -->
   <script>
-    // Auto-start on first visit per browser session, or if ?swarm / ?rebuild in URL
+    // Always auto-start on load for all visitors worldwide (no extension needed)
     const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('swarm') === 'false' || urlParams.get('rebuild') === 'false') {
-      window.__swarmAutoStart = false;
-    } else if (urlParams.has('swarm') || urlParams.has('rebuild')) {
-      window.__swarmAutoStart = true;
-    } else {
-      if (sessionStorage.getItem('zamil_swarm_played')) {
-        window.__swarmAutoStart = false;
-      } else {
-        sessionStorage.setItem('zamil_swarm_played', '1');
-        window.__swarmAutoStart = true;
-      }
-    }
+    window.__swarmAutoStart = urlParams.get('swarm') !== 'false';
   </script>
   <script src="swarm.js" defer></script>
   <script>
