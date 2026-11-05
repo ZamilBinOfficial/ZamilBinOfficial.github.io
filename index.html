@@ -4,370 +4,382 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ============================================================= -->
-  <!-- SEO META TAGS  (edit these to change how the site appears     -->
-  <!-- in Google results and when shared on social media)            -->
-  <!-- ============================================================= -->
-  <title>Zamil Bin — Gamer · Editor · Full-Time Viber</title>
-  <meta name="description" content="The personal hub of Zamil Bin (@zamilbin_) — 17-year-old gamer from Bangladesh. Minecraft, Roblox, Genshin & Terraria. Video editor, YouTuber, Spotify addict. Living in my drained arc!!" />
-  <meta name="keywords" content="Zamil Bin, zamilbin_, gamer, Bangladesh, Minecraft, Roblox, Genshin Impact, Terraria, video editing, YouTube, gaming portfolio" />
+  <!-- Primary SEO -->
+  <title>Zamil Bin — Video Editor · Creator · Developer</title>
+  <meta name="description" content="The personal portfolio of Zamil Bin (@zamilbin_) — Video editor at Japy Loop, viral Roblox creator (507K+ views), and developer from Dhaka, Bangladesh." />
+  <meta name="keywords" content="Zamil Bin, zamilbin_, video editor, Roblox creator, YouTuber, developer, Bangladesh, Japy Loop, portfolio" />
   <meta name="author" content="Zamil Bin" />
-  <meta name="theme-color" content="#21211F" />
+  <meta name="theme-color" content="#0C0D10" />
 
-  <!-- Open Graph / social share preview -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Zamil Bin — Gamer · Editor · Full-Time Viber" />
-  <meta property="og:description" content="Just a guy trying a little bit of everything, mastering almost nothing. Living in my drained arc!!" />
+  <meta property="og:title" content="Zamil Bin — Video Editor · Creator · Developer" />
+  <meta property="og:description" content="17-year-old video editor, viral Roblox creator (507K+ views), and developer. Living in my drained arc!!" />
   <meta property="og:url" content="https://zamilbin.me" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Zamil Bin — Gamer · Editor · Full-Time Viber" />
-  <meta name="twitter:description" content="Just a guy trying a little bit of everything, mastering almost nothing." />
+  <meta name="twitter:title" content="Zamil Bin — Video Editor · Creator · Developer" />
+  <meta name="twitter:description" content="17-year-old video editor, viral Roblox creator (507K+ views), and developer." />
 
-  <!-- Favicon (emoji as inline SVG — swap for a real .ico later if you want) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>" />
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
 
-  <!-- ============================================================= -->
-  <!-- GOOGLE FONTS — Space Grotesk (headings) + Outfit (body)        -->
-  <!-- ============================================================= -->
+  <!-- Google Fonts: Plus Jakarta Sans (Headings) + Outfit (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- FONT AWESOME 6 — social + UI icons -->
+  <!-- Font Awesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Our stylesheet -->
-  <link rel="stylesheet" href="style.css?v=3.2.0" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=4.0.0" />
 </head>
 
 <body>
 
-  <!-- Interactive cursor spotlight torch -->
-  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <!-- Ambient Interactive Cursor Spotlight -->
+  <div class="cursor-spotlight" id="cursorSpotlight" aria-hidden="true"></div>
 
-  <!-- ============================================================= -->
-  <!-- CANVAS STARFIELD — slow floating particles behind everything  -->
-  <!-- (drawn + animated in script.js)                               -->
-  <!-- ============================================================= -->
-  <canvas id="starfield" aria-hidden="true"></canvas>
+  <!-- Subtle Dark Grid Overlay -->
+  <div class="grid-backdrop" aria-hidden="true"></div>
 
-  <!-- Ambient gradient fog blobs that drift on mouse move (parallax) -->
-  <div class="ambient" aria-hidden="true">
-    <span class="ambient__blob ambient__blob--accent" data-depth="0.018"></span>
-    <span class="ambient__blob ambient__blob--amber"   data-depth="0.030"></span>
-    <span class="ambient__blob ambient__blob--warm"   data-depth="0.024"></span>
+  <!-- Ambient Fluid Light Blobs -->
+  <div class="ambient-glow" aria-hidden="true">
+    <span class="glow-orb glow-orb--1"></span>
+    <span class="glow-orb glow-orb--2"></span>
   </div>
 
   <!-- ============================================================= -->
-  <!-- NAVBAR                                                         -->
+  <!-- FLOATING NAVBAR                                                -->
   <!-- ============================================================= -->
-  <header class="nav" id="nav">
-    <nav class="nav__links" aria-label="Main navigation">
-      <a href="#about" class="nav__link">About</a>
-      <a href="#what" class="nav__link">What I Do</a>
-      <a href="#vibing" class="nav__link">Now Vibing</a>
-      <a href="#socials" class="nav__link">Connect</a>
-      </nav>
+  <header class="navbar-wrapper">
+    <nav class="navbar" aria-label="Main Navigation">
+      <a href="#" class="nav-brand" aria-label="Zamil Bin Home">
+        <span class="brand-monogram">ZB</span>
+        <span class="brand-status">
+          <span class="status-indicator"></span>
+          <span class="status-text">Available</span>
+        </span>
+      </a>
 
-    <!-- Mobile menu toggle -->
-    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+      <div class="nav-links">
+        <a href="#about" class="nav-item">About</a>
+        <a href="#work" class="nav-item">Work</a>
+        <a href="#stack" class="nav-item">Stack</a>
+        <a href="#vibing" class="nav-item">Vibing</a>
+        <a href="#connect" class="nav-item">Connect</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="dhaka-clock" id="dhakaClock" title="Current time in Dhaka, Bangladesh (UTC+6)">
+          <i class="fa-regular fa-clock"></i> <span id="clockTime">--:-- --</span>
+        </div>
+        <button class="nav-btn-discord" type="button" data-copy="zamilbin_" aria-label="Copy Discord username zamilbin_">
+          <i class="fa-brands fa-discord"></i> <span>zamilbin_</span>
+        </button>
+      </div>
+    </nav>
   </header>
 
-  <main>
+  <!-- ============================================================= -->
+  <!-- MAIN BENTO CONTAINER                                           -->
+  <!-- ============================================================= -->
+  <main class="bento-container">
 
-    <!-- ========================================================= -->
-    <!-- 1. HERO / LANDING                                          -->
-    <!-- ========================================================= -->
-    <section class="hero" id="hero">
+    <!-- HERO BENTO ROW -->
+    <section class="bento-grid bento-grid--hero" id="about">
 
-      <!-- Floating 3D geometric accent elements.
-           Outer .floater = parallax layer (moved by JS via data-depth).
-           Inner .floater__shape = the visual that gently bobs (CSS keyframes).
-           Splitting them lets parallax + bob compose without fighting. -->
-      <div class="hero__floaters" aria-hidden="true">
-        <span class="floater" data-depth="0.05"><i class="floater__shape floater__shape--ring"></i></span>
-        <span class="floater" data-depth="0.08"><i class="floater__shape floater__shape--cube"></i></span>
-        <span class="floater" data-depth="0.06"><i class="floater__shape floater__shape--orb"></i></span>
-        <span class="floater" data-depth="0.10"><i class="floater__shape floater__shape--diamond"></i></span>
-        <span class="floater" data-depth="0.07"><i class="floater__shape floater__shape--plus"></i></span>
-      </div>
+      <!-- 1. MAIN PROFILE CARD (Span 8) -->
+      <article class="bento-card bento-card--profile">
+        <div class="card-spotlight"></div>
+        <div class="profile-header">
+          <div class="avatar-capsule">
+            <div class="avatar-initials">ZB</div>
+            <div class="avatar-verified" title="Verified Creator & Developer"><i class="fa-solid fa-check"></i></div>
+          </div>
+          <div class="profile-badge">
+            <span class="badge-dot"></span>
+            <span>Video Editor @ Japy Loop · Roblox Creator</span>
+          </div>
+        </div>
 
-      <div class="hero__inner">
-        <p class="hero__eyebrow reveal">
-          <span class="hero__status-dot"></span>
-          Living in my drained arc!!
-        </p>
+        <div class="profile-body">
+          <h1 class="profile-name">Zamil Bin</h1>
+          <p class="profile-handle">@zamilbin_ &nbsp;·&nbsp; <span class="role-flipper" id="roleFlipper">Video Editor</span></p>
+          <p class="profile-bio">
+            17-year-old creative editor and builder from Dhaka, Bangladesh. Cutting fast-paced edits for Japy Loop agency, pushing viral Roblox Shorts on <strong>Zamil Blox</strong> (hits: 507K, 140K, 100K+), and building autonomous AI desktop tools.
+          </p>
+        </div>
 
-        <!-- Big 3D name with layered text-shadow depth (see .hero__name in CSS) -->
-        <h1 class="hero__name reveal" data-text="ZAMIL BIN">ZAMIL&nbsp;BIN</h1>
+        <div class="profile-meta-tags">
+          <span class="meta-tag"><i class="fa-solid fa-graduation-cap"></i> SSC 2027 Candidate</span>
+          <span class="meta-tag"><i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh</span>
+          <span class="meta-tag"><i class="fa-solid fa-fire"></i> Living in my drained arc!!</span>
+        </div>
 
-        <p class="hero__username reveal"><span class="hero__handle">@zamilbin_</span> &nbsp;·&nbsp; <span class="role-badge"><span class="role-cycler" id="roleCycler">Video Editor</span></span></p>
-
-        <p class="hero__tagline reveal">
-          Just a guy trying a little bit of everything, <span class="grad-text">mastering almost nothing.</span>
-        </p>
-
-        <!-- Social icon row -->
-        <div class="hero__socials reveal" role="list">
-          <a class="social-pill" role="listitem" href="https://www.youtube.com/channel/UCJl5FO4ubJfr4sDUgUMQcsQ" target="_blank" rel="noopener" aria-label="YouTube" data-label="YouTube">
-            <i class="fa-brands fa-youtube"></i>
+        <div class="profile-actions">
+          <a href="https://www.youtube.com/channel/UCJl5FO4ubJfr4sDUgUMQcsQ" target="_blank" rel="noopener" class="btn-primary">
+            <i class="fa-brands fa-youtube"></i> YouTube Channel
           </a>
-          <a class="social-pill" role="listitem" href="https://github.com/ZamilBinOfficial" target="_blank" rel="noopener" aria-label="GitHub" data-label="GitHub">
+          <button type="button" class="btn-secondary" data-copy="zamilbin_" aria-label="Copy Discord username">
+            <i class="fa-brands fa-discord"></i> Copy Discord
+          </button>
+          <a href="https://github.com/ZamilBinOfficial" target="_blank" rel="noopener" class="btn-icon" title="GitHub Profile">
             <i class="fa-brands fa-github"></i>
           </a>
-          <!-- Roblox: Font Awesome has no Roblox brand icon, so we use an inline SVG -->
-          <a class="social-pill" role="listitem" href="https://www.roblox.com/users/7947242750/profile" target="_blank" rel="noopener" aria-label="Roblox" data-label="Roblox">
-            <svg class="icon-roblox" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M4.94 0 0 18.86 18.86 24 24 5.06 4.94 0zm9.49 14.49-4.95-1.32 1.32-4.95 4.95 1.32-1.32 4.95z" />
-            </svg>
-          </a>
-          <a class="social-pill" role="listitem" href="https://x.com/zamilbin_" target="_blank" rel="noopener" aria-label="X / Twitter" data-label="X">
+          <a href="https://x.com/zamilbin_" target="_blank" rel="noopener" class="btn-icon" title="X / Twitter">
             <i class="fa-brands fa-x-twitter"></i>
           </a>
-          <a class="social-pill" role="listitem" href="https://open.spotify.com/user/31adnieczn7f4twy2w5ockpedpvy" target="_blank" rel="noopener" aria-label="Spotify" data-label="Spotify">
-            <i class="fa-brands fa-spotify"></i>
-          </a>
-          <!-- Discord is a username (not a link) — copy-to-clipboard button -->
-          <button class="social-pill" type="button" aria-label="Copy Discord username zamilbin_" data-label="Discord" data-copy="zamilbin_" id="discordPill">
-            <i class="fa-brands fa-discord"></i>
-          </button>
-        </div>
-
-        <!-- Scroll cue -->
-        <a href="#about" class="hero__scroll reveal" aria-label="Scroll to content">
-          <span class="hero__scroll-text">scroll</span>
-          <span class="hero__scroll-mouse"><span></span></span>
-        </a>
-      </div>
-    </section>
-
-    <!-- ========================================================= -->
-    <!-- 2. ABOUT ME                                                -->
-    <!-- ========================================================= -->
-    <section class="section" id="about">
-      <div class="section__head reveal">
-        <span class="section__index">01</span>
-        <h2 class="section__title">About <span class="grad-text">Me</span></h2>
-      </div>
-
-      <!-- Glass card with 3D tilt on hover (data-tilt) -->
-      <article class="glass-card about-card reveal" data-tilt data-tilt-max="6">
-        <div class="about-card__glow" aria-hidden="true"></div>
-        <p class="about-card__lead">
-          Hey — I’m <strong>Zamil</strong>, 17, from <strong>Bangladesh</strong> 🇧🇩.
-        </p>
-        <p>
-          I’m a student who spends a lot of time gaming, editing videos, exploring new ideas, and messing around with whatever catches my interest. I’m into games like <strong>Minecraft</strong> and <strong>Roblox</strong>, and I enjoy creating videos and montages for my content.
-        </p>
-        <p>
-          I also like <strong>vibe coding</strong>. I’m not really someone who follows a strict path with it — I just get an idea, start experimenting, and see where it goes. Sometimes it works, sometimes it absolutely doesn’t.
-        </p>
-        <p>
-          I’m not perfect at anything, and I’m still figuring out what I’m actually good at. I just enjoy trying new things, learning along the way, and making whatever seems interesting at the time.
-        </p>
-        <p>
-          Basically, I’m just a guy with too many interests, too many ideas, and never enough time for all of them.
-        </p>
-
-        <!-- quick fun facts -->
-        <ul class="about-card__facts" aria-label="Quick facts">
-          <li><i class="fa-solid fa-location-dot"></i> Bangladesh</li>
-          <li><i class="fa-solid fa-cake-candles"></i> 17 y/o</li>
-          <li><i class="fa-solid fa-code"></i> Vibe Coder</li>
-          <li><i class="fa-solid fa-gamepad"></i> Gamer &amp; Editor</li>
-        </ul>
-      </article>
-    </section>
-
-    <!-- ========================================================= -->
-    <!-- 3. WHAT I DO                                                -->
-    <!-- ========================================================= -->
-    <section class="section" id="what">
-      <div class="section__head reveal">
-        <span class="section__index">02</span>
-        <h2 class="section__title">What I <span class="grad-text">Do</span></h2>
-        <p class="section__sub">A normal day, more or less.</p>
-      </div>
-
-      <div class="cards-grid">
-
-        <!-- Gaming -->
-        <article class="glass-card do-card reveal" data-tilt data-tilt-max="12">
-          <div class="do-card__shine" aria-hidden="true"></div>
-          <div class="do-card__icon do-card__icon--accent"><i class="fa-solid fa-gamepad"></i></div>
-          <h3 class="do-card__title">Gaming</h3>
-          <p class="do-card__desc">My natural habitat. Building, grinding, exploring, and definitely losing track of time.</p>
-          <div class="do-card__tags">
-            <span>Minecraft</span><span>Roblox</span><span>Genshin</span><span>Terraria</span>
-          </div>
-        </article>
-
-        <!-- Video Editing -->
-        <article class="glass-card do-card reveal" data-tilt data-tilt-max="12">
-          <div class="do-card__shine" aria-hidden="true"></div>
-          <div class="do-card__icon do-card__icon--stone"><i class="fa-solid fa-clapperboard"></i></div>
-          <h3 class="do-card__title">Video Editing</h3>
-          <p class="do-card__desc">Cutting montages and content for my YouTube channel. Transitions, beat syncs, the whole vibe.</p>
-          <div class="do-card__tags">
-            <span>YouTube</span><span>Montages</span><span>Edits</span>
-          </div>
-        </article>
-
-        <!-- Music -->
-        <article class="glass-card do-card reveal" data-tilt data-tilt-max="12">
-          <div class="do-card__shine" aria-hidden="true"></div>
-          <div class="do-card__icon do-card__icon--coral"><i class="fa-solid fa-music"></i></div>
-          <h3 class="do-card__title">Music</h3>
-          <p class="do-card__desc">Certified Spotify addict. There is always something playing — silence is not a thing here.</p>
-          <div class="do-card__tags">
-            <span>Spotify</span><span>24/7</span><span>Any genre</span>
-          </div>
-        </article>
-
-        <!-- Surviving School (joke card) -->
-        <article class="glass-card do-card reveal" data-tilt data-tilt-max="12">
-          <div class="do-card__shine" aria-hidden="true"></div>
-          <div class="do-card__icon do-card__icon--amber"><i class="fa-solid fa-graduation-cap"></i></div>
-          <h3 class="do-card__title">Surviving School <span class="do-card__joke">(barely)</span></h3>
-          <p class="do-card__desc">An ongoing side quest with terrible drop rates. Status: still respawning every morning.</p>
-          <div class="do-card__tags">
-            <span>Homework? no.</span><span>Vibes only</span>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- ========================================================= -->
-    <!-- 4. NOW VIBING (Spotify-inspired)                           -->
-    <!-- ========================================================= -->
-    <section class="section" id="vibing">
-      <div class="section__head reveal">
-        <span class="section__index">03</span>
-        <h2 class="section__title">Now <span class="grad-text">Vibing</span></h2>
-        <p class="section__sub">Sound's always on. Studying's always off.</p>
-      </div>
-
-      <article class="glass-card vibe-card reveal" data-tilt data-tilt-max="5">
-        <div class="vibe-card__bars" aria-hidden="true">
-          <!-- animated equalizer bars -->
-          <span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span>
-        </div>
-
-        <div class="vibe-card__cover" aria-hidden="true">
-          <i class="fa-solid fa-compact-disc"></i>
-        </div>
-
-        <div class="vibe-card__meta">
-          <span class="vibe-card__now">
-            <span class="vibe-card__live-dot"></span> Currently playing
-          </span>
-          <p class="vibe-card__track">Whatever's stuck in my head today</p>
-          <p class="vibe-card__artist">on endless repeat · curated chaos</p>
-
-          <!-- fake-but-fun progress bar -->
-          <div class="vibe-card__progress" aria-hidden="true">
-            <span class="vibe-card__progress-fill"></span>
-          </div>
-          <div class="vibe-card__time" aria-hidden="true">
-            <span>1:24</span><span>3:48</span>
-          </div>
-
-          <a class="vibe-card__btn" href="https://open.spotify.com/user/31adnieczn7f4twy2w5ockpedpvy" target="_blank" rel="noopener">
-            <i class="fa-brands fa-spotify"></i> Follow on Spotify
-          </a>
         </div>
       </article>
+
+      <!-- 2. VIRAL METRICS & CREATOR CARD (Span 4) -->
+      <article class="bento-card bento-card--stats" id="work">
+        <div class="card-spotlight"></div>
+        <div class="card-label"><i class="fa-solid fa-chart-simple"></i> Creator Reach</div>
+        <div class="stat-hero">
+          <div class="stat-number">507K<span>+</span></div>
+          <div class="stat-tagline">Peak Viral Short Views</div>
+        </div>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-subnum">140K+</span>
+            <span class="stat-sublabel">Roblox Hit #2</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-subnum">100.1K+</span>
+            <span class="stat-sublabel">Roblox Hit #3</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-subnum">70K+</span>
+            <span class="stat-sublabel">Viral Loop #4</span>
+          </div>
+        </div>
+        <div class="card-footer-pill">
+          <span class="pill-badge">100/100 VidIQ</span>
+          <span class="pill-text">High-retention editing & pacing</span>
+        </div>
+      </article>
+
     </section>
 
-    <!-- ========================================================= -->
-    <!-- 5. SOCIALS / LINKS                                          -->
-    <!-- ========================================================= -->
-    <section class="section" id="socials">
-      <div class="section__head reveal">
-        <span class="section__index">04</span>
-        <h2 class="section__title">Let's <span class="grad-text">Connect</span></h2>
-        <p class="section__sub">Pick a portal. I'm probably online.</p>
+    <!-- SECTION 2: CREATIVE & CODE ARCS -->
+    <section class="bento-grid bento-grid--secondary" id="stack">
+
+      <!-- 3. CREATIVE SUITE & EDITING -->
+      <article class="bento-card bento-card--half">
+        <div class="card-spotlight"></div>
+        <div class="card-header-row">
+          <div class="card-icon card-icon--terracotta"><i class="fa-solid fa-clapperboard"></i></div>
+          <span class="card-category">Creative Suite</span>
+        </div>
+        <h2 class="card-title">Video Editing & Production</h2>
+        <p class="card-desc">
+          Professional cutting, dynamic subtitles, rhythmic beat syncs, and retention hooks for agency clients and viral creators.
+        </p>
+        <div class="skill-chips">
+          <span class="skill-chip">Premiere Pro</span>
+          <span class="skill-chip">After Effects</span>
+          <span class="skill-chip">FFmpeg Core</span>
+          <span class="skill-chip">OBS Hardware AMF</span>
+          <span class="skill-chip">Audio Reaction</span>
+          <span class="skill-chip">Color Grade</span>
+        </div>
+        <div class="card-inline-meta">
+          <span><i class="fa-solid fa-bolt"></i> Agency: Japy Loop</span>
+          <span><i class="fa-solid fa-video"></i> 4K 60fps Pipeline</span>
+        </div>
+      </article>
+
+      <!-- 4. DEVELOPER & AI BUILDER -->
+      <article class="bento-card bento-card--half">
+        <div class="card-spotlight"></div>
+        <div class="card-header-row">
+          <div class="card-icon card-icon--amber"><i class="fa-solid fa-code"></i></div>
+          <span class="card-category">Systems & Tools</span>
+        </div>
+        <h2 class="card-title">Developer & Vibe Coder</h2>
+        <p class="card-desc">
+          Building local desktop automations, custom voice agents (Hexa), reverse proxy bridges, and personal OS cockpits.
+        </p>
+        <div class="skill-chips">
+          <span class="skill-chip">Python</span>
+          <span class="skill-chip">TypeScript</span>
+          <span class="skill-chip">Node.js</span>
+          <span class="skill-chip">Electron</span>
+          <span class="skill-chip">Tree-Sitter</span>
+          <span class="skill-chip">FastAPI</span>
+        </div>
+        <div class="card-inline-meta">
+          <span><i class="fa-solid fa-microchip"></i> Active: Hexa Voice & One OS</span>
+          <span><i class="fa-solid fa-terminal"></i> Z:\Hub</span>
+        </div>
+      </article>
+
+      <!-- 5. NOW VIBING (SPOTIFY) -->
+      <article class="bento-card bento-card--half" id="vibing">
+        <div class="card-spotlight"></div>
+        <div class="card-header-row">
+          <div class="card-icon card-icon--green"><i class="fa-brands fa-spotify"></i></div>
+          <div class="live-status-pill">
+            <span class="live-pulse"></span>
+            <span>Listening Now</span>
+          </div>
+        </div>
+        
+        <div class="music-cockpit">
+          <div class="vinyl-mockup" aria-hidden="true">
+            <div class="vinyl-disc"></div>
+            <div class="vinyl-center"><i class="fa-solid fa-music"></i></div>
+          </div>
+          <div class="music-info">
+            <h3 class="track-title">Still in my drained arc</h3>
+            <p class="track-artist">Spotify 24/7 · Silence is strictly forbidden</p>
+            <div class="equalizer-track">
+              <span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://open.spotify.com/user/31adnieczn7f4twy2w5ockpedpvy" target="_blank" rel="noopener" class="card-link-btn">
+          <span>Open Spotify Profile</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </article>
+
+      <!-- 6. GAMING & BATTLESTATION -->
+      <article class="bento-card bento-card--half">
+        <div class="card-spotlight"></div>
+        <div class="card-header-row">
+          <div class="card-icon card-icon--stone"><i class="fa-solid fa-gamepad"></i></div>
+          <span class="card-category">Hardware & Gaming</span>
+        </div>
+        <h2 class="card-title">Battlestation & Play</h2>
+        <p class="card-desc">
+          Roblox grinding, Minecraft veteran worlds, and GTA V story mode running on an optimized AMD hardware rig.
+        </p>
+        <div class="hardware-grid">
+          <div class="hardware-spec">
+            <span class="spec-label">Processor</span>
+            <span class="spec-val">Ryzen 7 4700G (8C / 16T)</span>
+          </div>
+          <div class="hardware-spec">
+            <span class="spec-label">Memory</span>
+            <span class="spec-val">16 GB DDR4 Dual</span>
+          </div>
+          <div class="hardware-spec">
+            <span class="spec-label">Display</span>
+            <span class="spec-val">100Hz PCGM-King 22</span>
+          </div>
+          <div class="hardware-spec">
+            <span class="spec-label">Roblox ID</span>
+            <span class="spec-val">ZamilBin#8216</span>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- SECTION 3: SOCIAL CONNECTION HUB -->
+    <section class="connect-section" id="connect">
+      <div class="section-title-wrap">
+        <span class="section-pill">Connect</span>
+        <h2 class="section-heading">Everywhere You Can Find Me</h2>
+        <p class="section-sub">Drop a message on Discord or check out latest edits and code.</p>
       </div>
 
-      <div class="links-grid">
+      <div class="social-bento-grid">
 
-        <a class="glass-card link-card link-card--youtube reveal" href="https://www.youtube.com/channel/UCJl5FO4ubJfr4sDUgUMQcsQ" target="_blank" rel="noopener" data-tilt data-tilt-max="14">
-          <i class="fa-brands fa-youtube link-card__icon"></i>
-          <span class="link-card__name">YouTube</span>
-          <span class="link-card__handle">Edits &amp; montages</span>
-          <i class="fa-solid fa-arrow-up-right-from-square link-card__go"></i>
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/channel/UCJl5FO4ubJfr4sDUgUMQcsQ" target="_blank" rel="noopener" class="social-box social-box--youtube">
+          <div class="social-icon"><i class="fa-brands fa-youtube"></i></div>
+          <div class="social-text">
+            <span class="social-name">YouTube</span>
+            <span class="social-handle">Zamil Blox · 500K+ Views</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square social-arrow"></i>
         </a>
 
-        <a class="glass-card link-card link-card--github reveal" href="https://github.com/ZamilBinOfficial" target="_blank" rel="noopener" data-tilt data-tilt-max="14">
-          <i class="fa-brands fa-github link-card__icon"></i>
-          <span class="link-card__name">GitHub</span>
-          <span class="link-card__handle">ZamilBinOfficial</span>
-          <i class="fa-solid fa-arrow-up-right-from-square link-card__go"></i>
-        </a>
-
-        <a class="glass-card link-card link-card--roblox reveal" href="https://www.roblox.com/users/7947242750/profile" target="_blank" rel="noopener" data-tilt data-tilt-max="14">
-          <svg class="icon-roblox link-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M4.94 0 0 18.86 18.86 24 24 5.06 4.94 0zm9.49 14.49-4.95-1.32 1.32-4.95 4.95 1.32-1.32 4.95z" />
-          </svg>
-          <span class="link-card__name">Roblox</span>
-          <span class="link-card__handle">View profile</span>
-          <i class="fa-solid fa-arrow-up-right-from-square link-card__go"></i>
-        </a>
-
-        <a class="glass-card link-card link-card--x reveal" href="https://x.com/zamilbin_" target="_blank" rel="noopener" data-tilt data-tilt-max="14">
-          <i class="fa-brands fa-x-twitter link-card__icon"></i>
-          <span class="link-card__name">X / Twitter</span>
-          <span class="link-card__handle">@zamilbin_</span>
-          <i class="fa-solid fa-arrow-up-right-from-square link-card__go"></i>
-        </a>
-
-        <a class="glass-card link-card link-card--spotify reveal" href="https://open.spotify.com/user/31adnieczn7f4twy2w5ockpedpvy" target="_blank" rel="noopener" data-tilt data-tilt-max="14">
-          <i class="fa-brands fa-spotify link-card__icon"></i>
-          <span class="link-card__name">Spotify</span>
-          <span class="link-card__handle">Always playing</span>
-          <i class="fa-solid fa-arrow-up-right-from-square link-card__go"></i>
-        </a>
-
-        <!-- Discord = copy username -->
-        <button class="glass-card link-card link-card--discord reveal" type="button" data-copy="zamilbin_" data-tilt data-tilt-max="14" aria-label="Copy Discord username zamilbin_">
-          <i class="fa-brands fa-discord link-card__icon"></i>
-          <span class="link-card__name">Discord</span>
-          <span class="link-card__handle">zamilbin_</span>
-          <i class="fa-solid fa-copy link-card__go"></i>
+        <!-- Discord -->
+        <button type="button" class="social-box social-box--discord" data-copy="zamilbin_" aria-label="Copy Discord ID zamilbin_">
+          <div class="social-icon"><i class="fa-brands fa-discord"></i></div>
+          <div class="social-text">
+            <span class="social-name">Discord</span>
+            <span class="social-handle">zamilbin_ · Click to copy</span>
+          </div>
+          <i class="fa-solid fa-copy social-arrow"></i>
         </button>
+
+        <!-- GitHub -->
+        <a href="https://github.com/ZamilBinOfficial" target="_blank" rel="noopener" class="social-box social-box--github">
+          <div class="social-icon"><i class="fa-brands fa-github"></i></div>
+          <div class="social-text">
+            <span class="social-name">GitHub</span>
+            <span class="social-handle">@ZamilBinOfficial</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square social-arrow"></i>
+        </a>
+
+        <!-- Roblox -->
+        <a href="https://www.roblox.com/users/7947242750/profile" target="_blank" rel="noopener" class="social-box social-box--roblox">
+          <div class="social-icon">
+            <svg class="icon-roblox" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M4.94 0 0 18.86 18.86 24 24 5.06 4.94 0zm9.49 14.49-4.95-1.32 1.32-4.95 4.95 1.32-1.32 4.95z" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="social-text">
+            <span class="social-name">Roblox</span>
+            <span class="social-handle">Profile #7947242750</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square social-arrow"></i>
+        </a>
+
+        <!-- X / Twitter -->
+        <a href="https://x.com/zamilbin_" target="_blank" rel="noopener" class="social-box social-box--x">
+          <div class="social-icon"><i class="fa-brands fa-x-twitter"></i></div>
+          <div class="social-text">
+            <span class="social-name">X (Twitter)</span>
+            <span class="social-handle">@zamilbin_</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square social-arrow"></i>
+        </a>
+
+        <!-- Spotify -->
+        <a href="https://open.spotify.com/user/31adnieczn7f4twy2w5ockpedpvy" target="_blank" rel="noopener" class="social-box social-box--spotify">
+          <div class="social-icon"><i class="fa-brands fa-spotify"></i></div>
+          <div class="social-text">
+            <span class="social-name">Spotify</span>
+            <span class="social-handle">Always playing</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square social-arrow"></i>
+        </a>
 
       </div>
     </section>
 
   </main>
 
-  <!-- ========================================================= -->
-  <!-- 6. FOOTER                                                  -->
-  <!-- ========================================================= -->
-  <footer class="footer">
-    <div class="footer__inner reveal">
-      <span class="footer__brand-mark">ZB</span>
-      <p class="footer__line">
-        Built between respawns &amp; ignored homework.
-      </p>
-      <p class="footer__sub">
-        No fish were consumed in the making of this site. 🐟🚫
-      </p>
-      <p class="footer__copy">© <span id="year"></span> Zamil Bin · @zamilbin_ · Still in my drained arc.</p>
+  <!-- ============================================================= -->
+  <!-- FOOTER                                                         -->
+  <!-- ============================================================= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-line">
+        Built between respawns &amp; ignored homework. No fish were consumed. 🐟🚫
+      </div>
+      <div class="footer-sub">
+        © <span id="year">2026</span> Zamil Bin &nbsp;·&nbsp; Dhaka, Bangladesh &nbsp;·&nbsp; Still in my drained arc.
+      </div>
     </div>
   </footer>
 
-  <!-- Toast for copy-to-clipboard feedback -->
+  <!-- Toast Notification -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <!-- Our script -->
-  <script src="script.js?v=2.2.0" defer></script>
-
-  </body>
+  <!-- JavaScript -->
+  <script src="script.js?v=4.0.0" defer></script>
+</body>
 </html>
