@@ -183,7 +183,7 @@
     let stars = [];
     let animId = null;
 
-    const COLORS = ["#8b5cf6", "#06b6d4", "#ec4899", "#ffffff"];
+    const COLORS = ["#D97757", "#E58B6D", "#E59E52", "#B0AEA5", "#ffffff"];
 
     function resize() {
       w = canvas.clientWidth = window.innerWidth;
